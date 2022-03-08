@@ -32,10 +32,27 @@ body {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   margin: 1rem 1rem;
 }
 
 .card h3 {
   width: 130px;
-  height: 66px;
+  height: 87px;
+  font-family: Poppins, sans-serif;
+  margin-bottom: 0;
+}
+
+.card input {
+  align-self: center;
+  background-color: #fff;
+  width: 6rem;
+  height: 2rem;
+}
+
+.card div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
