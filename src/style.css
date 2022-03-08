@@ -24,3 +24,18 @@ body {
   width: calc(100% - 4px);
   border: 2px solid #000;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 1rem 1rem;
+}
+
+.card h3 {
+  width: 130px;
+  height: 66px;
+}
