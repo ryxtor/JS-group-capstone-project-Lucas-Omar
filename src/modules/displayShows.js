@@ -19,6 +19,7 @@ const displayShows = () => {
       comment.setAttribute('type', 'button');
       comment.setAttribute('value', 'Comments');
       comment.id = `comments-${show.id}`;
+      comment.classList.add('comment-button');
       // Create likes icon
       const likes = document.createElement('i');
       likes.classList.add('fa-solid', 'fa-heart');
