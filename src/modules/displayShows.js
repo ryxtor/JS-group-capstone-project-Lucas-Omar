@@ -23,11 +23,17 @@ const displayShows = () => {
       // Create likes icon
       const likes = document.createElement('i');
       likes.classList.add('fa-solid', 'fa-heart');
+
+      const nOfLikes = document.createElement('p');
+      nOfLikes.id = `likes-${show.id}`;
+      nOfLikes.textContent = '0';
+
       // Create a container for title and likes
       const titleContainer = document.createElement('div');
       // Append everything
       title.appendChild(textTitle);
       titleContainer.appendChild(title);
+      titleContainer.appendChild(nOfLikes);
       titleContainer.appendChild(likes);
       card.appendChild(image);
       card.appendChild(titleContainer);
