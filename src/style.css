@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
 
+body {
+  margin: 0;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -12,4 +16,11 @@
 
 .navbar ul li {
   margin-right: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 4px);
+  border: 2px solid #000;
 }
