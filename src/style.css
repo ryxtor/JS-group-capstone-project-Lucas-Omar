@@ -6,7 +6,11 @@ body {
 
 .navbar {
   display: flex;
+  position: fixed;
   align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2px solid #000;
 }
 
 .navbar ul {
@@ -15,12 +19,50 @@ body {
 }
 
 .navbar ul li {
-  margin-right: 10px;
+  margin-right: 4rem;
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: calc(100% - 4px);
-  border: 2px solid #000;
+  width: 100%;
+  border-top: 2px solid #000;
+  background-color: #fff;
+}
+
+.footer p {
+  margin-left: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem;
+}
+
+.card h3 {
+  width: 130px;
+  height: 87px;
+  font-family: Poppins, sans-serif;
+  margin-bottom: 0;
+}
+
+.card input {
+  align-self: center;
+  background-color: #fff;
+  width: 6rem;
+  height: 2rem;
+}
+
+.card div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
