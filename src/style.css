@@ -1,3 +1,15 @@
-.hello {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 10px;
 }
