@@ -1,8 +1,11 @@
 import './style.css';
 import displayShows from './modules/displayShows.js';
 import showPopUP from './modules/displayPopUp.js';
+import { getLikes } from './modules/getLikes.js';
 
-displayShows();
+getLikes().then(() => {
+  displayShows();
+});
 
 setTimeout(() => {
   const btns = document.querySelectorAll('.comment-button');
