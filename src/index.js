@@ -13,4 +13,3 @@ setTimeout(() => {
     btn.addEventListener('click', showPopUP);
   });
 }, 1000);
-
