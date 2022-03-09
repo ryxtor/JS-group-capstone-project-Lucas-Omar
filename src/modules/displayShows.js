@@ -1,6 +1,6 @@
 import getShows from './tvshowAPI.js';
 import { like } from './getLikes.js';
-import { addLike } from './addLikes.js';
+import addLike from './addLikes.js';
 
 const container = document.getElementById('container');
 
@@ -38,7 +38,7 @@ const displayShows = () => {
         }
       });
       // Like button
-      likes.addEventListener('click', async () => {          
+      likes.addEventListener('click', async () => {
         const likeId = {
           item_id: show.id,
         };

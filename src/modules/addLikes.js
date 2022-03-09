@@ -1,6 +1,6 @@
-import { invAPI, getLikes, like } from "./getLikes.js";
+import { invAPI, getLikes, like } from './getLikes.js';
 
-export const addLike = async (likeId) => {
+const addLike = async (likeId) => {
   await fetch(invAPI, {
     method: 'POST',
     headers: {
@@ -11,7 +11,7 @@ export const addLike = async (likeId) => {
   await getLikes();
 
   let likesCount = 0;
-  like.forEach(item => {
+  like.forEach((item) => {
     if (likeId.item_id === item.item_id) {
       likesCount = item.likes;
     }
@@ -19,4 +19,6 @@ export const addLike = async (likeId) => {
 
   const heart = document.getElementById(`likes-${likeId.item_id}`);
   heart.textContent = `${likesCount}`;
-}
+};
+
+export default addLike;
