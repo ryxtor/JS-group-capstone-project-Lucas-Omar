@@ -1,5 +1,6 @@
 import getShows from './tvshowAPI.js';
 import { like } from './getLikes.js';
+import { addLike } from './addLikes.js';
 
 const container = document.getElementById('container');
 
@@ -26,7 +27,7 @@ const displayShows = () => {
       comment.classList.add('comment-button');
       // Create likes icon
       const likes = document.createElement('i');
-      likes.classList.add('fa-solid', 'fa-heart');
+      likes.classList.add('fa-solid', 'fa-heart', 'fa-xl');
       // Create numbers of likes
       const nOfLikes = document.createElement('p');
       nOfLikes.id = `likes-${show.id}`;
@@ -36,7 +37,14 @@ const displayShows = () => {
           nOfLikes.textContent = item.likes;
         }
       });
-
+      // Like button
+      likes.addEventListener('click', async () => {          
+        const likeId = {
+          item_id: show.id,
+        };
+        await addLike(likeId);
+        likes.classList.add('heart');
+      });
       // Create a container for title and likes
       const titleContainer = document.createElement('div');
       // Append everything
