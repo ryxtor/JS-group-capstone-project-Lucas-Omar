@@ -22,7 +22,7 @@ const displayShows = () => {
       const comment = document.createElement('input');
       comment.setAttribute('type', 'button');
       comment.setAttribute('value', 'Comments');
-      comment.id = `comments-${show.id}`;
+      comment.id = `${show.id}`;
       comment.classList.add('comment-button');
       // Create likes icon
       const likes = document.createElement('i');
