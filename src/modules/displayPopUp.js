@@ -11,5 +11,5 @@ export default function showPopUP(e) {
     close.addEventListener('click', () => {
       bgModal.style.display = 'none';
     });
-  }, 100);
+  }, 1000);
 }

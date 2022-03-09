@@ -9,4 +9,4 @@ setTimeout(() => {
   btns.forEach((btn) => {
     btn.addEventListener('click', showPopUP);
   });
-}, 2000);
+}, 1000);
