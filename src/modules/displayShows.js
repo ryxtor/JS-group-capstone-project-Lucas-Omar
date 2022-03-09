@@ -1,5 +1,5 @@
 import getShows from './tvshowAPI.js';
-import {getLikes, like} from './getLikes.js';
+import { like } from './getLikes.js';
 
 const container = document.getElementById('container');
 
