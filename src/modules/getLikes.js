@@ -1,4 +1,4 @@
-const invAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/nGXJb8jNMlAqNOxXKCnW/likes';
+export const invAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/nGXJb8jNMlAqNOxXKCnW/likes';
 
 export const like = [];
 

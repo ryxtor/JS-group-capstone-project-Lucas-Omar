@@ -161,3 +161,22 @@ span {
   gap: 20px;
   flex-wrap: wrap;
 }
+
+.card div p {
+  font-family: Lato, sans-serif;
+}
+
+i {
+  color: rgb(146, 90, 153);
+  text-shadow: 1px 1px 2px #000;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+i:hover {
+  color: rgb(144, 0, 209);
+}
+
+.heart {
+  color: rgb(144, 0, 209);
+}
