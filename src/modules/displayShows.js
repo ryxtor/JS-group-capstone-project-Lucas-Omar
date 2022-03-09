@@ -1,4 +1,5 @@
 import getShows from './tvshowAPI.js';
+import {getLikes, like} from './getLikes.js';
 
 const container = document.getElementById('container');
 
@@ -23,10 +24,15 @@ const displayShows = () => {
       // Create likes icon
       const likes = document.createElement('i');
       likes.classList.add('fa-solid', 'fa-heart');
-
+      // Create numbers of likes
       const nOfLikes = document.createElement('p');
       nOfLikes.id = `likes-${show.id}`;
       nOfLikes.textContent = '0';
+      like.forEach((item) => {
+        if (show.id === item.item_id) {
+          nOfLikes.textContent = item.likes;
+        }
+      });
 
       // Create a container for title and likes
       const titleContainer = document.createElement('div');
