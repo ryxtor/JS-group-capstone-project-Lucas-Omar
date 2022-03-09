@@ -15,6 +15,9 @@ const displayShows = () => {
       // Create image
       const image = document.createElement('img');
       image.setAttribute('src', show.image.medium);
+      image.setAttribute('alt', show.name);
+      image.setAttribute('width', '210');
+      image.setAttribute('heigth', '295');
       // Create comment button
       const comment = document.createElement('input');
       comment.setAttribute('type', 'button');
