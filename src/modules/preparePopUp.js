@@ -50,4 +50,6 @@ const loadShow = async (id) => {
   return showsData;
 };
 
-export { bgModal, preparePopUp, loadShow, displayComments };
+export {
+  bgModal, preparePopUp, loadShow, displayComments,
+};
