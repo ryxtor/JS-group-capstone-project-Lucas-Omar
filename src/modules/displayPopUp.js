@@ -17,7 +17,7 @@ export default function showPopUP(e) {
           postComment(itemId, username, comment);
           commentForm.querySelector('.username').value = '';
           commentForm.querySelector('.commentBody').value = '';
-          displayComments(itemId, false, comment);
+          displayComments(itemId, false, username, comment);
         });
       });
     })
