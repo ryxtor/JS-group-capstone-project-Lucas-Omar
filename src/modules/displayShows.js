@@ -3,6 +3,7 @@ import { like } from './getLikes.js';
 import addLike from './addLikes.js';
 import { displayCardCounter } from './countCards.js';
 import showPopUP from './displayPopUp.js';
+
 const container = document.getElementById('container');
 
 const displayShows = () => {

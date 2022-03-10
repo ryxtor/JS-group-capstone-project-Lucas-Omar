@@ -9,4 +9,3 @@ export const displayCardCounter = () => {
   const counter = document.getElementById('shows');
   counter.textContent = `Tv Shows (${cards})`;
 };
-
