@@ -72,7 +72,8 @@ body {
   color: #fff;
 }
 
-.card input {
+.card input,
+form button {
   align-self: center;
   background-color: rgb(131, 44, 202);
   color: #fff;
@@ -85,7 +86,8 @@ body {
   transition: background-color 0.2s;
 }
 
-.card input:hover {
+.card input:hover,
+form button:hover {
   background-color: rgb(179, 74, 228);
 }
 
@@ -104,13 +106,14 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
 }
 
 .pop-up {
   height: 90vh;
   width: 60%;
   margin: 5vh auto;
-  background: #fff;
+  background: linear-gradient(120deg, rgba(128, 76, 245, 1) 30%, rgba(225, 109, 255, 1) 100%);
   position: relative;
   z-index: 1;
   border-radius: 5px;
@@ -123,13 +126,17 @@ span {
   background: #212121;
   color: #fff;
   font-size: 1.25em;
-  padding: 0.4em 0.7em;
+  padding: 0.7em 0.7em;
   cursor: pointer;
+  text-align: center;
 }
 
 .pop-up-text {
   box-sizing: border-box;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pop-up-text h1 {
@@ -150,8 +157,8 @@ span {
 }
 
 .pop-up-text img {
-  max-height: 250px;
-  width: 100%;
+  max-height: 295px;
+  width: auto;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -160,6 +167,97 @@ span {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  height: max-content;
+  justify-content: space-around;
+}
+
+.comment ul {
+  list-style: none;
+  width: 40%;
+  padding: 0;
+  border: 2px solid #000;
+  margin: 0;
+  border-radius: 12px;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.comment ul li {
+  padding: 12px;
+  font-family: Lato, sans-serif;
+  color: #fff;
+}
+
+.comment ul li:nth-child(even) {
+  background-color: rgb(194, 150, 214);
+}
+
+.img-details {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  color: #fff;
+}
+
+.details h1 {
+  font-family: Poppins, sans-serif;
+  color: #fff;
+}
+
+.details p {
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.pop-up h3 {
+  color: #fff;
+  font-family: Poppins, sans-serif;
+}
+
+.username {
+  background: transparent;
+  width: 100%;
+  height: 24px;
+  border: 2px solid #000;
+  border-radius: 12px 12px 0 0;
+  padding: 12px;
+  font-family: Lato, sans-serif;
+  color: #fff;
+}
+
+.username::placeholder {
+  color: lightgrey;
+  font-family: Lato, sans-serif;
+}
+
+.commentBody {
+  background: transparent;
+  border: 2px solid #000;
+  width: 100%;
+  border-radius: 0 0 12px 12px;
+  padding: 12px;
+  font-family: Lato, sans-serif;
+  color: #fff;
+}
+
+.commentBody::placeholder {
+  color: lightgray;
+  font-family: Lato, sans-serif;
+}
+
+.comment ul::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
 }
 
 .card div p {
@@ -179,4 +277,56 @@ i:hover {
 
 .heart {
   color: rgb(144, 0, 209);
+}
+
+@media screen and (max-width: 1062px) {
+  .img-details img {
+    width: 80%;
+    height: auto;
+  }
+
+  .img-details {
+    justify-content: center;
+  }
+
+  .details {
+    margin: 0;
+  }
+
+  .details p {
+    display: none;
+  }
+
+  .comment ul li {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .comment ul {
+    height: auto;
+    width: 90%;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .comment {
+    justify-content: center;
+  }
+
+  .pop-up {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 80%;
+  }
+
+  .username,
+  .commentBody {
+    width: 90%;
+  }
+
+  .pop-up::-webkit-scrollbar {
+    width: 0;
+  }
 }

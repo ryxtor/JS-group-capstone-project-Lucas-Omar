@@ -8,6 +8,7 @@ export default function showPopUP(e) {
     .then((data) => {
       preparePopUp(data);
       bgModal.style.display = 'block';
+      document.querySelector('html').style.overflow = 'hidden';
       document.querySelectorAll('form').forEach((commentForm) => {
         commentForm.addEventListener('submit', (event) => {
           event.preventDefault();
@@ -26,6 +27,7 @@ export default function showPopUP(e) {
       const close = document.querySelector('.close');
       close.addEventListener('click', () => {
         bgModal.style.display = 'none';
+        document.querySelector('html').style.overflow = 'auto';
       });
     });
 }
