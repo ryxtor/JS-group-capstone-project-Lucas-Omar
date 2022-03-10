@@ -1,6 +1,7 @@
 import getShows from './tvshowAPI.js';
 import { like } from './getLikes.js';
 import addLike from './addLikes.js';
+import { displayCardCounter } from './countCards.js';
 
 const container = document.getElementById('container');
 
@@ -57,6 +58,7 @@ const displayShows = () => {
       card.appendChild(comment);
       container.appendChild(card);
     });
+    displayCardCounter();
   });
 };
 
