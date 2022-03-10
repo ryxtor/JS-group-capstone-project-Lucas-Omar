@@ -1,6 +1,7 @@
 import getShows from './tvshowAPI.js';
 import { like } from './getLikes.js';
 import addLike from './addLikes.js';
+import showPopUP from './displayPopUp.js';
 
 const container = document.getElementById('container');
 
@@ -25,6 +26,7 @@ const displayShows = () => {
       comment.setAttribute('value', 'Comments');
       comment.id = `${show.id}`;
       comment.classList.add('comment-button');
+      comment.addEventListener('click', showPopUP);
       // Create likes icon
       const likes = document.createElement('i');
       likes.classList.add('fa-solid', 'fa-heart', 'fa-xl');

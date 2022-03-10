@@ -1,4 +1,24 @@
+import { getComments } from './getComments.js';
+
 const bgModal = document.querySelector('.bg-modal');
+
+const displayComments = (id, callApi = true, comment = '') => {
+  const ul = document.querySelector(`[data-id="${id}"]`);
+  const h3 = document.querySelector(`[data-item-id="${id}"]`);
+  if (callApi) {
+    let count = 0;
+    getComments(id).then((data) => {
+      data.forEach((comment) => {
+        ul.innerHTML += `<li>${comment.username}: ${comment.comment}</li>`;
+        count += 1;
+        h3.innerText = `Comments (${count})`;
+      });
+    });
+  } else {
+    ul.innerHTML += `<li>${comment}</li>`;
+    h3.innerText = `Comments (${ul.childElementCount})`;
+  }
+};
 
 const preparePopUp = (show) => {
   bgModal.innerHTML = `
@@ -9,16 +29,13 @@ const preparePopUp = (show) => {
         <h1>${show.name}</h1>
         <p>genre: ${show.genres[0]}</p>
         <p>length: lorem ipsum</p>
-        <h3>Comments</h3>
+        <h3 data-item-id="${show.id}">Comments (0)</h3>
         <div class="comment">
-          <ul>
-            <li>That's cool</li>
-            <li>I would like to buy it</li>
-          </ul>
-          <form>
-            <input type="text">
+          <ul data-id="${show.id}"></ul>
+          <form id="${show.id}">
+            <input type="text" class='username'>
             <br>
-            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            <textarea name="comment" id="" cols="30" rows="10" class='commentBody'></textarea>
             <br>
             <button type="submit">Comment</button>
           </form>
@@ -26,12 +43,15 @@ const preparePopUp = (show) => {
       </div>
     </div>
       `;
+  displayComments(show.id);
 };
 
-const loadShows = async (id) => {
+const loadShow = async (id) => {
   const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
   const showsData = await response.json();
   return showsData;
 };
 
-export { bgModal, preparePopUp, loadShows };
+export {
+  bgModal, preparePopUp, loadShow, displayComments,
+};
