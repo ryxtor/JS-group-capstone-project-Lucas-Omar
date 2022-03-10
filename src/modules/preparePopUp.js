@@ -2,20 +2,18 @@ import { getComments } from './getComments.js';
 
 const bgModal = document.querySelector('.bg-modal');
 
-const displayComments = (id, callApi = true, comment = '') => {
+const displayComments = (id, callApi = true, username = '', comment = '') => {
   const ul = document.querySelector(`[data-id="${id}"]`);
   const h3 = document.querySelector(`[data-item-id="${id}"]`);
   if (callApi) {
-    let count = 0;
     getComments(id).then((data) => {
       data.forEach((comment) => {
         ul.innerHTML += `<li>${comment.username}: ${comment.comment}</li>`;
-        count += 1;
-        h3.innerText = `Comments (${count})`;
+        h3.innerText = `Comments (${ul.childElementCount})`;
       });
     });
   } else {
-    ul.innerHTML += `<li>${comment}</li>`;
+    ul.innerHTML += `<li>${username}: ${comment}</li>`;
     h3.innerText = `Comments (${ul.childElementCount})`;
   }
 };
